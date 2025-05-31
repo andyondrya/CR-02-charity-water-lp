@@ -1,19 +1,253 @@
-/* charity: water Brand Colors & Fonts
+@import url('https://fonts.googleapis.com/css2?family=Avenir&display=swap');
 
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
+body {
+  margin: 0;
+  font-family: 'Avenir', 'Proxima Nova', sans-serif;
+  background: #fefefe;
+  color: #333;
+}
 
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: #fefefe;
+  flex-wrap: wrap;
+}
 
-Fonts:
-- Proxima Nova
-- Avenir
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #333;
+}
 
-*/
+.logo img {
+  height: 50px;
+  margin-right: 12px;
+}
+
+.learn-more-btn {
+  background-color: #FFC907;
+  color: black;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+  border: 2px solid #FFC907;
+}
+
+.learn-more-btn:hover {
+  background-color: #e6b700;
+  border-color: #e6b700;
+}
+
+@media (min-width: 600px) {
+  .learn-more-btn {
+    margin-top: 0;
+  }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background: url('img/landing.png') no-repeat center center/cover;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  z-index: 1;
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  white-space: normal;
+}
+
+.hero p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-outline {
+  background: white;
+  color: #2E9DF7;
+  border: 2px solid white;
+}
+
+.btn-outline:hover {
+  background: #2E9DF7;
+  color: white;
+}
+
+.btn-yellow {
+  background: #FFC907;
+  color: #000;
+  border: 2px solid #FFC907;
+}
+
+.btn-yellow:hover {
+  background: #e6b700;
+  border-color: #e6b700;
+}
+
+/* Bottom Water Border */
+.water-border {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.water-border svg {
+  position: relative;
+  display: block;
+  width: 200%;
+  height: 100%;
+  animation: waveMove 6s linear infinite;
+}
+
+.water-border .wave {
+  fill: #2E9DF7;
+  opacity: 0.6;
+}
+
+.water-border.bottom svg {
+  transform: scaleY(-1);
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Info Section */
+.info-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.info-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.info-left,
+.info-right {
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+.info-section h2 {
+  font-size: 1.8rem;
+  color: #2E9DF7;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-section p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* FAQ */
+.faq details {
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq summary {
+  font-weight: bold;
+  color: #2E9DF7;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.faq p {
+  margin-top: 0.75rem;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.faq details[open] {
+  border-color: #2E9DF7;
+  background-color: #f1faff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-box {
+    flex-direction: column;
+  }
+
+  .info-left,
+  .info-right {
+    flex: 1 1 100%;
+  }
+}
